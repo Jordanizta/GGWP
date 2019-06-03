@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+	
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>TODOS OS JOGOS - JOGOS - GGWP</title>
+</h:head>
+<h:body>
+
+	<h:form>
+		<div>
+			<h4>Lis</h4>
+			<p:dataTable value="#{jogo.mostrarJogo()}" var="game">
+				<f:facet name="header">Lista de Jogos</f:facet>
+				
+				<p:column headerText="Nome do Jogo">
+					<h:outputText value="#{game.nomejogo}" />
+				</p:column>
+
+				<p:column headerText="Estilo do Jogo">
+					<h:outputText value="#{game.estilojogo}" />
+				</p:column>
+
+				<p:column headerText="Console">
+					<h:outputText value="#{game.console}" />
+				</p:column>
+
+				<p:column headerText="Preço do Aluguel (semana)">
+					<h:outputText value="#{game.valor}" />
+				</p:column>
+
+				<p:column>
+					<p:commandButton action="#{jogo.alterarJogo(game.idjogo)}"
+						value="Atualizar dados" />
+				</p:column>
+				<p:column>
+					<p:commandButton action="#{jogo.excluirJogo(game.idjogo)}" ajax="true"
+						value="Excluir" update="@form" />
+				</p:column>
+				
+				<f:facet name="footer">
+        			Total de #{fn:length(jogo.mostrarJogo())} jogos disponíveis.
+    			</f:facet>
+			</p:dataTable>
+			<p:commandButton action="cadastrojogo.xhtml" value="REGISTRAR NOVO JOGO" />
+			<p:commandButton action="index.xhtml" value="Voltar Iniciar"/>
+		</div>
+	</h:form>
+
+</h:body>
+</html>

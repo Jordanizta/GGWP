@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<h:outputStylesheet library="css" name="folhaestilo.css" />
+	<h:outputScript library="js" name="validacliente.js"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>CADASTRO CLIENTE - CLIENTE - GGWP</title>
+</h:head>
+<h:body>
+
+	<h4>Cadastro de cliente</h4>
+
+	<h:form>
+		<p:panel header="Cadastro de clientes">
+			<h:panelGrid columns="3">
+				<p:outputLabel value="Nome Completo" />
+				<p:inputText id="nomeCliente" value="#{cliente.nome}">
+					<p:ajax event="keyup" update="out1" />
+				</p:inputText>
+				<h:outputText id="out1" value="#{cliente.nome}" />
+			</h:panelGrid>
+
+			<h:panelGrid columns="3">
+				<p:outputLabel value="Telefone" />
+				<p:inputText id="telefoneCliente" value="#{cliente.telefone}">
+					<p:ajax event="keyup" update="out2" />
+				</p:inputText>
+				<h:outputText id="out2" value="#{cliente.telefone}" />
+			</h:panelGrid>
+
+			<h:panelGrid columns="3">
+				<p:outputLabel value="Endereco" />
+				<p:inputText id="enderecoCliente" value="#{cliente.endereco}">
+					<p:ajax event="keyup" update="out3" />
+				</p:inputText>
+				<h:outputText id="out3" value="#{cliente.endereco}" />
+			</h:panelGrid>
+
+			<h:panelGrid columns="2">
+				<p:commandButton onclick="return validacliente()" action="#{cliente.salvaCliente()}"
+					value="Concluído" />
+				<p:commandButton action="cliente.xhtml" value="Cancelar" />
+			</h:panelGrid>
+		</p:panel>
+	</h:form>
+
+</h:body>
+</html>

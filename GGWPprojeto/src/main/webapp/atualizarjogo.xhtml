@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>ATUALIZAR DADOS - JOGOS - GGWP</title>
+</h:head>
+<h:body>
+	<h4>Alterar Jogo</h4>
+	
+	<p:graphicImage id="atualizar1" library="imagens" name="ggwplogo2.png" width=""/>
+	
+	<h:form>
+		<p:panel header="Atualização de jogos">
+			<h:panelGrid columns="3">
+				<h:outputLabel value="Nome do Jogo" />
+				<p:inputText id="jogoNome" value="#{jogoEdit.nomejogo}">
+					<p:ajax event="keyup" update="out1" />
+				</p:inputText>
+				<h:outputText id="out1" value="#{clienteEdit.nome}" />
+			</h:panelGrid>
+
+			<h:panelGrid columns="3">
+				<h:outputLabel value="Estilo do Jogo:" />
+				<p:inputText id="jogoEstilo" value="#{jogoEdit.estilojogo}">
+					<p:ajax event="keyup" update="out2" />
+				</p:inputText>
+				<h:outputText id="out2" value="#{jogoEdit.estilojogo}" />
+			</h:panelGrid>
+
+			<h:panelGrid columns="3">
+				<h:outputLabel value="Console" />
+				<p:inputText id="jogoConsole" value="#{jogoEdit.console}">
+					<p:ajax event="keyup" update="out3" />
+				</p:inputText>
+				<h:outputText id="out3" value="#{jogoEdit.console}" />
+			</h:panelGrid>
+
+			<h:panelGrid columns="3">
+				<h:outputLabel value="Valor" />
+				<p:inputText id="jogoValor" value="#{jogoEdit.valor}">
+					<f:validateLongRange minimum="1" maximum="200" />
+					<p:ajax event="keyup" update="out4" />
+				</p:inputText>
+				<h:outputText id="out4" value="#{jogoEdit.valor}" />
+			</h:panelGrid>
+
+			<h:panelGrid columns="2">
+				<p:commandButton action="#{jogo.updateJogo(jogoEdit)}"
+					value="Atualizar" />
+				<p:commandButton action="jogo.xhtml" value="Cancelar" />
+			</h:panelGrid>
+		</p:panel>
+	</h:form>
+	
+</h:body>
+</html>
