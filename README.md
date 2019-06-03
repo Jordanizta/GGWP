@@ -1,5 +1,5 @@
 # GGWP
-Projeto de um sistema de aluguel de jogos para um trabalho da disciplina de DESENVOLVIMENTO WEB.
+Projeto de um sistema de aluguel de jogos para um trabalho da disciplina de DESENVOLVIMENTO WEB, do curso de Sistemas de Informação na universidade Unifametro, em Fortaleza - Ceará.
 
 Feito por: 
 EMANUEL JORDAN e ROBSON SANTIAGO.
