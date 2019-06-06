@@ -20,7 +20,7 @@ O trabalho ficou bem modesto, por conta de falta de tempo e experiência. A part
 # Banco de Dados
 1. Crie um banco chamado `ggwp`
 2. Copie os códigos presentes no arquivo `Code tabela sql` e rode no banco `ggwp` para criação das tabelas utilizadas.
-Obs: Lembre-se da porta utilizada no banco, caso precise alterar nos arquivos. A porta padrão é `3306`.
+Obs¹: Lembre-se da porta utilizada no banco, caso precise alterar nos arquivos. A porta padrão é `3306`.
 Obs²: Pode ocorrer erros no sistema pois ao executar as linhas de criação das tabelas em sql, as mesmas podem ficar com sua primeira letra em minúsculo (exemplo: 'c'liente ao invés de 'C'liente), sendo que na aplicação foram utilizadas em maiúsculo (exemplo: 'C'liente e não 'c'liente).  
 
 # IMPORTANDO O PROJETO
